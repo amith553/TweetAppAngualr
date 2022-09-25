@@ -8,7 +8,7 @@
       <h4 style="color: var(--twitter-color)">Happening Now!!!</h4><br />
       <div class="card">
         <h5><b>Already have an account?</b></h5>
-            <h6><b>Login</b></h6>
+            <h6><b>Sign-In</b></h6>
     
     <form #authForm="ngForm" (ngSubmit)="onLogin(authForm)">
           <label for="email">Email address</label>
@@ -38,6 +38,6 @@
           <a class="forgot-password" style="color: red;" [routerLink]="['reset-password']">Forgot Password ?</a>
       </form>
       </div>
-<h5 style="margin-top: 10px;"><b>Join TweetApp today. <a [routerLink]="['register']" style="color: var(--twitter-color)">SignUp</a></b></h5>
+<h5 style="margin-top: 10px;"><b>Join TweetApp today. <a [routerLink]="['register']" style="color: var(--twitter-color)">Sign-Up</a></b></h5>
 </div>
 </div>
