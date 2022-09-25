@@ -13,7 +13,7 @@ export class AuthService{
     selectedValue = new EventEmitter<string>();
     userId = new Subject<string | null>();
     constructor(private http: HttpClient){}
-    apiurl = 'http://localhost:51400/api/v1.0/tweets/';
+    apiurl = 'https://comtweetapp20220923173925.azurewebsites.net/api/v1.0/tweets/';
     signUp(userDetail: User){
         return this.http.post(this.apiurl+'register', userDetail);
     }
