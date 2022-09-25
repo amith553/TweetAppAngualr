@@ -1,0 +1,43 @@
+<div class="row">
+<div class="col">
+<img class="backgroundImg" src="../../assets/images/tweetLogo.png">
+</div>
+<div class="col center">
+  <h1 style="color: var(--twitter-color)">Welcome To TweetApp<i style="padding: 5px;" class="fa fa-twitter" ></i></h1>
+
+      <h4 style="color: var(--twitter-color)">Happening Now!!!</h4><br />
+      <div class="card">
+        <h5><b>Already have an account?</b></h5>
+            <h6><b>Login</b></h6>
+    
+    <form #authForm="ngForm" (ngSubmit)="onLogin(authForm)">
+          <label for="email">Email address</label>
+          <input 
+          type="email" 
+          class="form-control" 
+          id="email"
+          name="email" 
+          placeholder="Enter email"
+          required
+          email
+          ngModel>
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            class="form-control" 
+            id="password" 
+            placeholder="Password"
+            name="password"
+            ngModel
+            required
+            minlength="6">
+            <div style="color: red;margin-bottom: 10px;font-weight: bold;" *ngIf="errorMessage">
+              {{ errorMessage }}
+            </div>
+          <button class="btn btn-primary" [disabled]="!authForm.valid">Sign In</button>
+          <a class="forgot-password" style="color: red;" [routerLink]="['reset-password']">Forgot Password ?</a>
+      </form>
+      </div>
+<h5 style="margin-top: 10px;"><b>Join TweetApp today. <a [routerLink]="['register']" style="color: var(--twitter-color)">SignUp</a></b></h5>
+</div>
+</div>

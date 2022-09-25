@@ -1,0 +1,50 @@
+.backgroundImg{
+    height: 100vh;
+    width: 50vw;
+}
+
+.loginBox{
+    display: flex;
+    align-items: center;
+}
+
+.center {
+    margin-top: 20px;
+margin-left: 40px;
+    width: 50%;  
+  }
+
+  label{
+      margin-bottom: 5px;
+
+  }
+  input{
+    margin-bottom: 15px;
+
+}
+
+button{
+margin-bottom: 5px;
+margin-right: 5px;
+height: 40px;
+width: 80px;
+
+  }
+
+
+  .card {
+    /* Add shadows to create the "card" effect */
+padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 30px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .btn-primary{
+    border-color: var(--twitter-background);
+    background-color: var(--twitter-color);
+  }
