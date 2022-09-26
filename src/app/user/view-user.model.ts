@@ -1,9 +1,9 @@
-export class ViewUser{
+export class ViewUser {
     constructor(public emailId: string,
         public dateOfBirth: Date,
         public gender: string,
         public firstName: string,
         public lastName: string,
-        public mobileNumber:number){
+        public mobileNumber: number) {
     }
 }

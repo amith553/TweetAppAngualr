@@ -15,12 +15,12 @@ export class TweetComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.tweetService.getAllTweets();
-     this.allTweets = this.tweetService.allTweets.subscribe((value: Tweet[]) => {
+    this.allTweets = this.tweetService.allTweets.subscribe((value: Tweet[]) => {
       this.tweets = value;
-     });
+    });
   }
 
   ngOnDestroy(): void {
-      this.allTweets.unsubscribe();
+    this.allTweets.unsubscribe();
   }
 }

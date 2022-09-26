@@ -14,20 +14,22 @@ import { TweetComponent } from './tweet/tweet.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'tweetapp', pathMatch: "full"},
-  {path: 'tweetapp/home', component: HomeComponent, children: [
-    {path: 'tweets/reply/:id', component: ReplyTweetComponent},
-    {path: 'tweets/edit/:id', component: EditTweetComponent},
-    {path: 'users', component: UserComponent},
-    {path: 'mytweets/user/:id', component: MyTweetsComponent},
-    {path: 'my-profile/:id', component: ProfileComponent},
-    {path: 'tweets', component: TweetComponent},
-    {path: '', redirectTo: 'tweets',pathMatch: 'full'},
-  ], canActivate:[AuthGuard]},
-  {path: 'tweetapp', component: LoginComponent},
-  {path: 'tweetapp/register', component: RegisterComponent},
-  {path: 'tweetapp/reset-password', component: ResetPasswordComponent},
-  {path: '**', component: ErrorComponent}
+  { path: '', redirectTo: 'tweetapp', pathMatch: "full" },
+  {
+    path: 'tweetapp/home', component: HomeComponent, children: [
+      { path: 'tweets/reply/:id', component: ReplyTweetComponent },
+      { path: 'tweets/edit/:id', component: EditTweetComponent },
+      { path: 'users', component: UserComponent },
+      { path: 'mytweets/user/:id', component: MyTweetsComponent },
+      { path: 'my-profile/:id', component: ProfileComponent },
+      { path: 'tweets', component: TweetComponent },
+      { path: '', redirectTo: 'tweets', pathMatch: 'full' },
+    ], canActivate: [AuthGuard]
+  },
+  { path: 'tweetapp', component: LoginComponent },
+  { path: 'tweetapp/register', component: RegisterComponent },
+  { path: 'tweetapp/reset-password', component: ResetPasswordComponent },
+  { path: '**', component: ErrorComponent }
 ];
 
 @NgModule({

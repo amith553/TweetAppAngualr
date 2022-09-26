@@ -7,12 +7,12 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  currentSelected : string = 'Home';
+  currentSelected: string = 'Home';
   constructor(private authService: AuthService) { }
-  
+
 
   ngOnInit(): void {
-    
+
   }
 
 }

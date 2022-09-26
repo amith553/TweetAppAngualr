@@ -10,19 +10,19 @@ import { ViewUser } from '../user/view-user.model';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  menuOptions = [{icon: "home", labelName: "Home"}, 
-  {icon: "search", labelName: "Search"},
-  {icon: "notifications_none", labelName: "Notifications"},
-  {icon: "mail_outline", labelName: "Messages"},
-  {icon: "bookmark_border", labelName: "Bookmarks"},
-  {icon: "list_alt", labelName: "Lists"},
-  {icon: "perm_identity", labelName: "Profiles"},
-  {icon: "more_horiz", labelName: "More"}
-]
+  menuOptions = [{ icon: "home", labelName: "Home" },
+  { icon: "search", labelName: "Search" },
+  { icon: "notifications_none", labelName: "Notifications" },
+  { icon: "mail_outline", labelName: "Messages" },
+  { icon: "bookmark_border", labelName: "Bookmarks" },
+  { icon: "list_alt", labelName: "Lists" },
+  { icon: "perm_identity", labelName: "Profiles" },
+  { icon: "more_horiz", labelName: "More" }
+  ]
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
-  user : ViewUser | null;
+  user: ViewUser | null;
   userId: string | null;
-  authSubscription : Subscription;
+  authSubscription: Subscription;
   ngOnInit(): void {
     this.authSubscription = this.authService.userDetail.subscribe((user) => {
       this.user = user;
@@ -30,19 +30,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.userId = localStorage.getItem('user');
   }
 
-  onSelect(value: string){
+  onSelect(value: string) {
     this.authService.selectedValue.emit(value);
   }
 
-  onLogout(){
+  onLogout() {
     this.authService.logout();
     this.router.navigate(['tweetapp']);
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.authSubscription.unsubscribe();
   }
 
-  
+
 
 }

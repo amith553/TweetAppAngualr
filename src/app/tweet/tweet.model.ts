@@ -1,5 +1,5 @@
-import {Reply} from './reply.model';
-export class Tweet{
+import { Reply } from './reply.model';
+export class Tweet {
     public id: string;
     public tweetText: string;
     public userId: string;
@@ -8,14 +8,14 @@ export class Tweet{
     public firstName: string;
     public lastName: string;
     public replies: Reply[]
-    public likedBy: string [];
+    public likedBy: string[];
 
-    constructor(id: string = "", tweetText: string = "", userId: string = "", likes: number = 0, 
-    dateAndTimeOfTweet: Date = new Date('0000/00/00'), replies: Reply[] = [], 
-    firstName : string ="", lastName: string = "", likedBy: string [] = []){
-        this.userId=userId;
-        this.id=id;
-        this.tweetText=tweetText;
+    constructor(id: string = "", tweetText: string = "", userId: string = "", likes: number = 0,
+        dateAndTimeOfTweet: Date = new Date('0000/00/00'), replies: Reply[] = [],
+        firstName: string = "", lastName: string = "", likedBy: string[] = []) {
+        this.userId = userId;
+        this.id = id;
+        this.tweetText = tweetText;
         this.dateAndTimeOfTweet = dateAndTimeOfTweet;
         this.likes = likes;
         this.replies = replies;

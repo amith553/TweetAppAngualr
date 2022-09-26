@@ -11,29 +11,29 @@ import { TweetService } from '../tweet.service';
 })
 export class MyTweetsComponent implements OnInit, OnDestroy {
   tweets: Tweet[];
-  tweetSubscription : Subscription;
-  constructor(private tweetService: TweetService, private route : ActivatedRoute) { }
+  tweetSubscription: Subscription;
+  constructor(private tweetService: TweetService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((param) => {
       this.tweetService.getTweetByUserId(param['id']);
     });
 
-    this.tweetSubscription =  this.tweetService.allTweets.subscribe((tweets) => {
+    this.tweetSubscription = this.tweetService.allTweets.subscribe((tweets) => {
       console.log(tweets);
       this.tweets = tweets;
     });
   }
 
-  onDelete(tweetId: string, userId: string){
+  onDelete(tweetId: string, userId: string) {
     this.tweetService.deleteTweetFromMyTweet(tweetId, userId);
   }
 
-  onLike(tweetId: string, userId: string){
-    this.tweetService.likeOrDisLikeTweet(tweetId,userId);
+  onLike(tweetId: string, userId: string) {
+    this.tweetService.likeOrDisLikeTweet(tweetId, userId);
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.tweetSubscription.unsubscribe();
   }
 }

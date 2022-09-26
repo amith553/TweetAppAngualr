@@ -11,7 +11,7 @@ import { ViewUser } from './view-user.model';
 })
 export class UserComponent implements OnInit, OnDestroy {
   users: ViewUser[];
-  allUserSubscription : Subscription;
+  allUserSubscription: Subscription;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class UserComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.allUserSubscription.unsubscribe();
   }
 

@@ -10,40 +10,40 @@ import { User } from '../user/user.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  displayStyle: string= 'none';
+  displayStyle: string = 'none';
   loginForm: boolean = false;
   errorMessage = '';
   successfullMessage = '';
   constructor(private authService: AuthService, private router: Router) { }
   options = [
-    {key: 1, value:"Favorite Movie"},
-    {key: 2, value:"Favorite Color"},
-    {key: 3, value:"Favorite Cuisine"},
-    {key: 4, value:"Favorite Sport"}
+    { key: 1, value: "Favorite Movie" },
+    { key: 2, value: "Favorite Color" },
+    { key: 3, value: "Favorite Cuisine" },
+    { key: 4, value: "Favorite Sport" }
   ]
   ngOnInit(): void {
   }
-  closePopup(){
+  closePopup() {
     this.successfullMessage = '';
     this.errorMessage = '';
     this.displayStyle = 'none';
   }
 
-  onLoginClick(){
+  onLoginClick() {
     this.displayStyle = 'block';
     this.loginForm = true;
   }
 
-  onSignUpClick(){
+  onSignUpClick() {
     this.displayStyle = 'block';
     this.loginForm = false;
   }
 
-  onLogin(form : NgForm){
-    this.authService.login(form.value.email, form.value.password).subscribe((response) =>{
+  onLogin(form: NgForm) {
+    this.authService.login(form.value.email, form.value.password).subscribe((response) => {
       this.closePopup();
       localStorage.setItem('user', response.emailId);
-      this.router.navigate(['tweetapp/','home']);
+      this.router.navigate(['tweetapp/', 'home']);
     }, error => {
       this.errorMessage = error;
     });

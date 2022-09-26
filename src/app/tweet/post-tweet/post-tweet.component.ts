@@ -10,18 +10,18 @@ import { TweetService } from '../tweet.service';
 })
 export class PostTweetComponent implements OnInit {
   @ViewChild('f') form: NgForm;
-  userId : string | null;
+  userId: string | null;
   constructor(private tweetService: TweetService) { }
 
   ngOnInit(): void {
     this.userId = localStorage.getItem('user');
   }
 
-  onSubmit(){
-    if(this.userId!=null){
+  onSubmit() {
+    if (this.userId != null) {
       this.tweetService.postTweet(this.userId, this.form.value.tweetText);
     }
-    else{
+    else {
       return;
     }
     this.form.reset();

@@ -21,16 +21,16 @@ export class TweetItemsComponent implements OnInit {
     this.userId = localStorage.getItem('user');
   }
 
-  onClick(){
+  onClick() {
     this.router.navigate(['tweetapp/reply']);
   }
 
-  onDelete(tweetId: string){
+  onDelete(tweetId: string) {
     this.tweetService.deleteTweetFromHome(tweetId);
   }
 
-  onLike(tweetId: string, userId: string){
-    this.tweetService.likeOrDisLikeTweet(tweetId,userId);
+  onLike(tweetId: string, userId: string) {
+    this.tweetService.likeOrDisLikeTweet(tweetId, userId);
   }
 
 }

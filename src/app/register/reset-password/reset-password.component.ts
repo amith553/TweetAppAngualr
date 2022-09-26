@@ -12,7 +12,7 @@ export class ResetPasswordComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
   isValid = false;
-  errorMessage=false;
+  errorMessage = false;
   check = {
     emailId: "string",
     mobileNumber: 0
@@ -23,12 +23,12 @@ export class ResetPasswordComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.check.emailId = form.value.email;
-    this.check.mobileNumber=form.value.mobileNumber;
+    this.check.mobileNumber = form.value.mobileNumber;
     console.log(this.check)
     this.authService.SecurityCheckValidation(this.check).subscribe((res) => {
       this.isValid = res;
-      if(!res){
-        this.errorMessage=true
+      if (!res) {
+        this.errorMessage = true
       }
     });
   }

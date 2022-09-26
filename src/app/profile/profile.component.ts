@@ -13,22 +13,22 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute, private userService: UserService) { }
   userDetail: ViewUser;
-  userSubscription : Subscription;
- DOB: string;
+  userSubscription: Subscription;
+  DOB: string;
 
   ngOnInit(): void {
     this.route.params.subscribe((param) => {
       this.userService.getUsers(param['id']);
     });
 
-    this.userSubscription =  this.userService.userDetail.subscribe((userDetail) =>{
+    this.userSubscription = this.userService.userDetail.subscribe((userDetail) => {
       this.userDetail = userDetail;
       this.DOB = this.userDetail.dateOfBirth.toString();
-      this.DOB = this.DOB.substring(0,10)
+      this.DOB = this.DOB.substring(0, 10)
     })
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.userSubscription.unsubscribe();
   }
 

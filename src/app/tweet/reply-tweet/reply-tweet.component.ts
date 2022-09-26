@@ -12,7 +12,7 @@ import { TweetService } from '../tweet.service';
   styleUrls: ['./reply-tweet.component.css']
 })
 export class ReplyTweetComponent implements OnInit, OnDestroy {
-  @ViewChild('f') form:NgForm;
+  @ViewChild('f') form: NgForm;
   private isChanges: Subscription;
   tweet: Tweet;
   id: string;
@@ -21,19 +21,19 @@ export class ReplyTweetComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.route.params.subscribe(
-      (param: Params) =>{
+      (param: Params) => {
         this.id = param['id'];
         this.tweetService.getTweetById(this.id);
       }
     );
 
-    this.isChanges =  this.tweetService.tweetChanged.subscribe((tweetUpdated) => {
+    this.isChanges = this.tweetService.tweetChanged.subscribe((tweetUpdated) => {
       this.tweet = tweetUpdated;
       this.reply = tweetUpdated != undefined ? tweetUpdated.replies.length > 0 : false;
     });
   }
 
-  onReply(){
+  onReply() {
     const value = this.form.value;
     const reply = new Reply(value.replyText);
     this.tweetService.addReply(reply, this.id);
@@ -42,7 +42,7 @@ export class ReplyTweetComponent implements OnInit, OnDestroy {
 
 
   ngOnDestroy(): void {
-      this.isChanges.unsubscribe();
+    this.isChanges.unsubscribe();
   }
 
 }
