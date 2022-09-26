@@ -91,7 +91,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }  */
   
   .feed__header h2 {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
   }
   
   .feed::-webkit-scrollbar {
