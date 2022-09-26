@@ -1,13 +1,13 @@
 button[disabled]{
-    background-color: #b1dbf5;
+    background-color: #dfe6e9;
 }
 
 button[disabled]:hover{
-    background-color: #b1dbf5;
+    background-color: #dfe6e9;
 }
 
 .tweetBox__tweetButton:hover{
-    background-color: #25a3f1;
+    background-color: #81ecec
 }
 
 .indicator{
@@ -25,5 +25,5 @@ button[disabled]:hover{
 }
 
 .valid-input{
-    color: #0b99f1;
+    color: #00b894;
 }

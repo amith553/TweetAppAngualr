@@ -17,7 +17,7 @@
     display: block;
     color: #000000;
     padding: 5px;
-    background-color: var(--twitter-background);
+    background-color: lightcyan;
     text-decoration: none;
     cursor: pointer;
   }

@@ -13,10 +13,10 @@
         <div class="post__body">
           <div class="post__header">
             <div class="post__headerText">
-              <h3>
-                {{ tweet?.firstName }} {{ tweet?.lastName }}
+              <h3><b>
+                {{ tweet?.firstName }} {{ tweet?.lastName }}</b>
                 <span class="post__headerSpecial"
-                  ><span class="material-icons post__badge"> verified </span>{{ tweet?.userId }}</span
+                  ><span class="material-icons post__badge"> verified </span></span
                 >
                 <span style="position: relative; float: right;">{{ tweet?.dateAndTimeOfTweet | date :'short' }}</span>
               </h3>
@@ -69,10 +69,10 @@
         <div class="post__body">
           <div class="post__header">
             <div class="post__headerText">
-              <h3>
-                {{ tweetReply.firstName }} {{ tweetReply.lastName }}
+              <h3><b>
+                {{ tweetReply.firstName }} {{ tweetReply.lastName }}</b>
                 <span class="post__headerSpecial"
-                  ><span class="material-icons post__badge"> verified </span>{{ tweetReply.userId }}</span
+                  ><span class="material-icons post__badge"> verified </span></span
                 >
                 <span style="position: relative; float: right;">{{ tweetReply.dateAndTimeOfReply | date :'short' }}</span>
               </h3>
